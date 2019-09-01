@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>💭 imessage </title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript"> 
+    // 이모티콘 추가
+    $(document).ready(function() {
+      $('.emoji1').click(function(){
+        var input = $( "#test" );
+        input.val( input.val() + "😍" );
+      });
+      $('.emoji2').click(function(){
+        var input = $( "#test" );
+        input.val( input.val() + "👏" );
+      });
+      $('.emoji3').click(function(){
+        var input = $( "#test" );
+        input.val( input.val() + "💩" );
+      });
+      $('.emoji4').click(function(){
+        var input = $( "#test" );
+        input.val( input.val() + "😡" );
+      });
+    });
+    </script>
+    <!-- <link rel="stylesheet" href="/css/index.css"> -->
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/index.js"></script>
+  </head>
+  <style>
+    body{
+      font-family: "AppleSDGothicNeoR00";
+      font-size: 15px;
+    }
+  /* 메인 */
+    #main {
+    background-color: white;
+    background-size: 100%;
+    text-align: center;
+    width: 350px;
+    height: 630px;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    display: block;  
+    box-shadow: 0px 0px 20px -5px rgba(0, 0, 0, 0.8);
+  }
+  #header{
+    width: 350px;
+    height: 30px;
+    background-color: #0b81ff;
+    line-height: 30px;
+    font-family: "AppleSDGothicNeoM00";
+    color: azure;
+    font-size: 17px;
+  }
+  #chat {
+    position: absolute;
+    background-color: #f0f1f2;
+    height: 465px;
+    width: 334px;
+    overflow-y: auto;
+    top: 120px;
+    left: 8px;
+    border-radius: 10px;
+    /* border: 0.4px solid gray; */
+  }
+  /* 접속 알림 */
+  .connect {
+    width: 90%;
+    margin: auto;
+    font-size: 10px;
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  /* 접속 종료 알림 */
+  .disconnect {
+    width: 90%;
+    margin: auto;
+    font-size: 10px;
+    text-align: center;
+    margin-top: 10px;
+  }
+  /* 내가 보낸 메시지 */
+  .me{
+    width: 110px;
+    overflow:hidden;
+    overflow-x:hidden; 
+    overflow-y:hidden;
+    word-wrap:break-word;
+    margin-left: 190px;
+    background-color: #0b81ff;
+    border-radius: 10px;
+    margin-top: 10px;
+    font-size: 13px;
+    color: white;
+    padding: 3px;
+  }
+  #test{
+    position: absolute;
+    width: 220px;
+    height: 20px;
+    background-color: #f7f5f5;
+    border-radius: 10px;
+    border: none;
+    top: 595px;
+    left: 120px;
+    font-family: "AppleSDGothicNeoR00";
+  }
+  .emoji1{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: none;
+    top: 594px;
+    left: 10px;
+  }
+  .emoji2{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: none;
+    top: 594px;
+    left: 35px;
+  }
+  .emoji3{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: none;
+    top: 594px;
+    left: 60px;
+  }
+  .emoji4{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: none;
+    top: 594px;
+    left: 85px;
+  }
+  /* 상대방이 보낸 메시지 */
+  .other {
+    width: 110px;
+    overflow:hidden;
+    word-wrap:break-word;
+    margin-left: 20px;
+    background-color: #e2e2e2;
+    border-radius: 10px;
+    margin-top: 10px;
+    font-size: 13px;
+    padding: 3px;
+  }
+  #h_name{
+    text-align: center;
+    font-size: 13px;
+    line-height: 34px;
+    color: white;
+    font-size: 15px;
+    font-family: "AppleSDGothicNeoR00";
+  }
+  #h_introduce{
+    text-align: center;
+    font-size: 12px;
+    color: white;
+    font-family: "AppleSDGothicNeoR00";
+  }
+  #about{
+    text-align: center;
+    width: 331px;
+    height: 60px;
+    border-radius: 15px;
+    margin-left: 10px;
+    margin-top: 16px;
+    background-color: #0b81ff;
+  }
+  </style>
+  <body>
+    <div id="main">
+      <div id="header">imessage</div>
+      <div id="about">
+        <div id="h_name">사용자 : 이유진님</div> <!-- 입력한 이름 -->
+        <div id="h_introduce">😀 한줄소개 : 만나서 반가워요 ^*^</div> <!-- 입력한 한줄소개 -->
+      </div>
+      <div id="chat">
+        <!-- 채팅 메시지 -->
+      </div>
+      <div>
+        <input type="image" src="https://cdn.shopify.com/s/files/1/1061/1924/products/Heart_Eyes_Emoji_2_large.png?v=1542446801" class="emoji1">
+        <input type="image" src="https://cdn.shopify.com/s/files/1/1061/1924/products/Clapping_Hands_Emoji_ios10_d7ab242e-7230-47bf-b1e2-d46a4bc51b5b_large.png?v=1542436040" class="emoji2">
+        <input type="image" src="https://cdn.shopify.com/s/files/1/1061/1924/products/Poop_Emoji_2_large.png?v=1542436024" class="emoji3">
+        <input type="image" src="https://cdn.shopify.com/s/files/1/1061/1924/products/Super_Angry_Face_Emoji_ios10_large.png?v=1542436021" class="emoji4">
+        <input type="text" id="test" placeholder=" imessage" onkeydown="send()">
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,22 @@
+{
+  "name": "hae",
+  "version": "1.0.0",
+  "description": "hh",
+  "main": "index.js",
+  "scripts": {
+    "test": "hellow"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/2ujin/ChatProject.git"
+  },
+  "keywords": [
+    "hh"
+  ],
+  "author": "2ujin",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "socket.io": "^2.2.0"
+  }
+}

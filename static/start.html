@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset = "utf-8">
+  <title>💭 imessage</title>
+ </head>
+ <style>
+    .start {
+    text-align: center;
+    background-color: #0b81ff;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    width: 350px;
+    height: 630px;
+    left: 0;
+    right: 0;
+    display: block;
+    box-shadow: 0px 0px 20px -5px rgba(0, 0, 0, 0.8);
+    }
+    h3{
+        font-family: "AppleSDGothicNeoL00";
+        color: white;
+        text-align: center;
+    }
+    .text{
+        width: 200px;
+        height: 30px;
+        background-color: white;
+        border-radius: 30px;
+        border: 0.5px solid gray;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+ </style>
+ <body>
+    <div class="start" style="height: 630px;">
+        <br><br><br><br><br><br><br><br><br><br><h3>💏 환영합니당 💏</h3>
+        <input type="text" class="text" id="user_name" placeholder="이름을 입력해주세요!">
+        <input type="text" class="text" id="user_introduce" placeholder="한줄소개를 입력해주세요!"><br>
+        <script type="text/javascript">
+            var user_name = document.getElementById('user_name');
+            var user_introduce = document.getElementById('user_introduce');
+            user_introduce.addEventListener('keypress', function(e){ // 키보드 눌림 이벤트
+                if (e.key === 'Enter') { //엔터키를 눌렀을 때만
+                location.href = "/main/?user="+user_name.value+"&intro="+user_introduce.value;
+                }
+            })
+        </script>
+    </div>
+
+</body>
+</html>
