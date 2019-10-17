@@ -25,7 +25,7 @@ app.use('/img', express.static('./static/img'))
 
 // '/'경로에 접속 했을 때 ((get 방식임))
 app.get('/', function(request, response) {
-  fs.readFile('./static/first_page.html', function(err, data) { //index.html파일 받아옴
+  fs.readFile('./static/first_page.html', function(err, data) { //first_page.html파일 받아옴
     if(err) {
       response.send('에러')
     } else {
@@ -38,7 +38,7 @@ app.get('/', function(request, response) {
 
 // 이름 입력하는 페이지
 app.get('/start', function(request, response) {
-  fs.readFile('./static/start.html', function(err, data) { //index.html파일 받아옴
+  fs.readFile('./static/start.html', function(err, data) { //start.html파일 받아옴
     if(err) {
       response.send('에러')
     } else {
