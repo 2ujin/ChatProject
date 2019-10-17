@@ -1,5 +1,5 @@
 # ChatProject
-정보보호 프로젝트 imessage
+채팅 프로젝트 imessage 💬
 
 ## PREVIEW
 - 접속 시 이름과 간단한 소개를 적는 페이지
